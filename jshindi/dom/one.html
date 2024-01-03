@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learing</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">Dom learning on chai aur code </h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+    
+    <script>
+      const title = document.getElementById('title')
+      title.style.backgroundColor='green'
+      title.style.color='white'
+      title.style.padding='12px'
+     
+      const myul= document.querySelector('ul')
+      console.log(myul);
+      const myli = document.querySelector('li')
+      console.log(myli);
+      myli.style.backgroundColor='green'
+      myli.textContent='six'
+
+      myli1 = document.querySelectorAll('li')
+      console.log(myli1);
+      myli1[1].style.backgroundColor='blue'
+
+       const myH1 = document.querySelectorAll('h1')
+       myH1[0].style.color='black'
+
+     myli1.forEach((l)=>{
+        l.style.color='black'
+     })
+
+       const itemList = document.getElementsByClassName('list-item')
+       console.log(itemList);
+       const myConvertedArray = Array.from(itemList)
+       console.log(myConvertedArray);
+
+      myConvertedArray.forEach((l)=> l.style.backgroundColor='pink')
+    </script>
+</body>
+</html>

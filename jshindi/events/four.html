@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Start should chnage the background color every second</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+   const ramdomColor = function(){
+    const hex = '0123456789ABCDEF'
+    let color = '#'
+    for(let i=0 ; i<6 ; i++){
+        color+= hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+   }
+   
+   let interval;
+
+   function startChange(){
+   interval = setInterval(change , 100)
+    function change(){
+        document.body.style.backgroundColor=ramdomColor()
+    }
+   }
+
+   function stopChange(){
+    clearInterval(interval)
+   }
+
+   document.getElementById('start').addEventListener('click' , startChange)
+   document.getElementById('stop').addEventListener('click' , stopChange)
+</script>
+</html>
